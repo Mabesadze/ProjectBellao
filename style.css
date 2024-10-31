@@ -1,0 +1,1024 @@
+@charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --titleFont: "Playfair Display", serif;
+  --textFont: "Montserrat", sans-serif;
+}
+
+.buttonStyle {
+  width: 200px;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid black;
+  font-size: 15px;
+  font-family: var(--textFont);
+  transition: 0.2s;
+}
+.buttonStyle:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 80px;
+  background-color: #F3F1EA;
+  width: 100%;
+  height: 90px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.main .Name {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-family: var(--titleFont);
+  font-weight: 600;
+}
+.main .rightside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 30px;
+}
+.main .rightside ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.main .rightside ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-family: var(--textFont);
+  transition: 0.2s;
+}
+.main .rightside ul li a:hover {
+  color: #7C640E;
+}
+.main .rightside ul li aactive {
+  color: #7C640E;
+}
+.main .rightside .searchbar {
+  position: relative;
+  width: 150px;
+}
+.main .rightside .searchbar input {
+  background-color: #F3F1EA;
+  height: 40px;
+  width: 100%;
+  border-radius: 40px;
+  border: 1px solid black;
+  padding-left: 10px;
+}
+.main .rightside .searchbar input:hover {
+  background-color: #E6DFC9;
+  border: 2px solid black;
+}
+.main .rightside .searchbar input::-moz-placeholder {
+  color: black;
+}
+.main .rightside .searchbar input::placeholder {
+  color: black;
+}
+.main .rightside .searchbar i {
+  position: absolute;
+  bottom: 12px;
+  right: 10px;
+}
+.main .icons a {
+  text-decoration: none;
+  color: black;
+}
+.main .icons a i {
+  margin: 3px;
+}
+.main .fa-bars {
+  font-size: 30px;
+  visibility: hidden;
+  z-index: 2;
+}
+
+header {
+  position: relative;
+}
+header #checkbox {
+  position: absolute;
+  top: 40px;
+  right: 80px;
+  z-index: 3;
+  opacity: 0;
+}
+header #checkbox:checked ~ .sideBar {
+  transform: translate(0);
+}
+
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(209, 153, 153);
+  width: 300px;
+  height: 300px;
+  transform: translate(-1500px);
+  transition: 0.4s;
+  position: fixed;
+  right: 0;
+  top: 90px;
+  z-index: 4;
+}
+.sideBar .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 30px;
+}
+.sideBar .list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  list-style: none;
+}
+.sideBar .list ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-family: var(--textFont);
+  transition: 0.2s;
+}
+.sideBar .list ul li a:hover {
+  color: #7C640E;
+}
+.sideBar .list ul li aactive {
+  color: #7C640E;
+}
+.sideBar .list .icons {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.sideBar .list .icons a {
+  text-decoration: none;
+  color: white;
+}
+.sideBar .list .icons a i {
+  margin: 3px;
+}
+
+.BlogAndShop {
+  display: flex;
+  height: 1000px;
+  width: 100%;
+  font-family: var(--titleFont);
+}
+.BlogAndShop .blog {
+  width: 100%;
+  background-image: url("https://d1fufvy4xao6k9.cloudfront.net/images/blog/posts/2024/08/hockerty_high_fashion_model_photo_of_two_models_embracing_the_4817e649-0950-47e3-8356-6b84e4b62a3f_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.BlogAndShop .blog::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.2;
+}
+.BlogAndShop .blog a {
+  color: white;
+  font-size: 80px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 1;
+}
+.BlogAndShop .blog a:hover {
+  color: #DFBFB1;
+}
+.BlogAndShop .shop {
+  width: 100%;
+  background-image: url("./photo/shop.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.BlogAndShop .shop::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.2;
+}
+.BlogAndShop .shop a {
+  color: white;
+  font-size: 80px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 1;
+}
+.BlogAndShop .shop a:hover {
+  color: #DFBFB1;
+}
+
+.BellaÖ {
+  color: #7C640E;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 20px;
+  font-family: var(--textFont);
+}
+
+.MyPosts {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: var(--titleFont);
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 90px;
+}
+.posts .post {
+  background-color: #F3F1EA;
+  width: 340px;
+  height: 440px;
+  border: none;
+}
+.posts .post img {
+  width: 100%;
+  height: 230px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.posts .post .cardBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.posts .post .cardBottom .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 25px 15px;
+  font-size: 12px;
+}
+.posts .post .cardBottom .info a {
+  margin-top: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: var(--titleFont);
+}
+.posts .post .cardBottom .info a:hover {
+  color: #7C640E;
+}
+.posts .post .line {
+  border-bottom: 1px solid #9f9f9f;
+  width: 300px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.posts .post .mask {
+  margin-top: 30px;
+}
+.posts .post .viewer {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.ReadMore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.ShopTheLook {
+  width: 100%;
+  height: 800px;
+  background-color: #F3F1EA;
+  margin-top: 10px;
+}
+.ShopTheLook h1 {
+  text-align: center;
+  font-size: 36px;
+  font-family: var(--titleFont);
+  padding-top: 80px;
+}
+.ShopTheLook .ViewAll {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 70px;
+}
+
+.Products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-top: 70px;
+}
+.Products .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.Products .item img {
+  height: 330px;
+  width: 220px;
+  margin-bottom: 25px;
+}
+.Products .item .bag {
+  position: absolute;
+  top: 25%;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .hat {
+  position: absolute;
+  top: 65px;
+  right: 75px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .swim {
+  position: absolute;
+  bottom: 180px;
+  left: 50px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .trous {
+  position: absolute;
+  top: 120px;
+  right: 50px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .jacket {
+  position: absolute;
+  bottom: 100px;
+  left: 50px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .shirt {
+  position: absolute;
+  top: 25%;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .bag2 {
+  position: absolute;
+  bottom: 90px;
+  right: 40px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .trous2 {
+  position: absolute;
+  top: 170px;
+  right: 90px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .tops {
+  position: absolute;
+  top: 120px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .shirt2 {
+  position: absolute;
+  top: 15%;
+  left: 40px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .shoe {
+  position: absolute;
+  bottom: 60px;
+  right: 70px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .dress {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .bag3 {
+  position: absolute;
+  top: 170px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.Products .item .dress2 {
+  position: absolute;
+  top: 40%;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.About {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 365px;
+  width: 100%;
+  background-color: #F3F1EA;
+}
+.About .portrait {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  height: 522px;
+  width: 600px;
+}
+.About .portrait h1 {
+  font-family: var(--titleFont);
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+.About .portrait img {
+  height: 315px;
+  width: 317px;
+  margin-bottom: 0px;
+}
+.About .mountain {
+  position: absolute;
+  right: 0px;
+  top: 5px;
+  background-image: url(./photo/mount.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 522px;
+  width: 610px;
+}
+
+.white {
+  height: 165px;
+  margin-bottom: 20px;
+}
+
+.text {
+  display: flex;
+  margin-bottom: 80px;
+}
+.text .paragraph {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 30px;
+  width: 100%;
+}
+.text .paragraph p {
+  font-family: var(--textFont);
+}
+.text .paragraph button {
+  margin-top: 30px;
+}
+.text .empty {
+  width: 610px;
+  border: none;
+  background-color: white;
+}
+
+.followMe {
+  height: 700px;
+  width: 100%;
+  background-color: #F3F1EA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.followMe .title {
+  margin-bottom: 30px;
+}
+.followMe .title h1 {
+  font-family: var(--titleFont);
+  font-size: 36px;
+}
+.followMe .pictures {
+  height: 430px;
+  width: 880px;
+  display: grid;
+  grid-template-columns: repeat(6, 130px);
+  grid-auto-rows: 130px;
+  gap: 30px;
+  justify-content: center;
+}
+.followMe .pictures .picture1 img {
+  height: 130px;
+  width: 130px;
+}
+.followMe .pictures .picture2 img {
+  height: 130px;
+  width: 130px;
+}
+.followMe .pictures .picture3 img {
+  height: 130px;
+  width: 130px;
+}
+.followMe .pictures .picture4 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.followMe .pictures .picture4 img {
+  height: 280px;
+  width: 280px;
+}
+.followMe .pictures .picture5 img {
+  height: 130px;
+  width: 130px;
+}
+.followMe .pictures .picture6 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.followMe .pictures .picture6 img {
+  height: 280px;
+  width: 280px;
+}
+.followMe .pictures .picture7 img {
+  height: 130px;
+  width: 130px;
+}
+.followMe .pictures .picture8 img {
+  height: 130px;
+  width: 130px;
+}
+.followMe .pictures .picture9 img {
+  height: 130px;
+  width: 130px;
+}
+.followMe .pictures .picture10 img {
+  height: 130px;
+  width: 130px;
+}
+.followMe .pictures .picture11 img {
+  height: 130px;
+  width: 130px;
+}
+.followMe .pictures .picture12 img {
+  height: 130px;
+  width: 130px;
+}
+
+#scroll {
+  height: 50px;
+  width: 100%;
+  background-color: #F3F1EA;
+}
+
+.contact {
+  height: 730px;
+  width: 100%;
+  display: flex;
+  gap: 230px;
+}
+.contact .SignUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 80px;
+}
+.contact .SignUp .icons a {
+  text-decoration: none;
+  color: black;
+}
+.contact .SignUp .icons a i {
+  margin: 3px;
+}
+.contact .SignUp h1 {
+  font-size: 36px;
+  font-family: var(--titleFont);
+}
+.contact .SignUp .mail {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.contact .SignUp .mail input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  margin-top: 30px;
+}
+.contact .SignUp .mail label {
+  font-family: var(--textFont);
+  font-size: 17px;
+}
+.contact .SignUp .checkbox {
+  display: flex;
+}
+.contact .SignUp .checkbox label {
+  font-family: var(--textFont);
+  font-size: 17px;
+  margin-left: 10px;
+}
+.contact .SignUp .checkbox button {
+  width: 130px;
+  height: 40px;
+  margin-left: 30px;
+}
+.contact .SignUp .Collabs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact .SignUp .Collabs h1 {
+  font-family: var(--titleFont);
+  font-size: 36px;
+}
+.contact .SignUp .Collabs p {
+  font-family: var(--textFont);
+}
+.contact .Input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-right: 80px;
+  font-family: var(--textFont);
+  font-size: 17px;
+}
+.contact .Input .Names {
+  display: flex;
+  gap: 30px;
+}
+.contact .Input .Names .firstName {
+  display: flex;
+  flex-direction: column;
+}
+.contact .Input .Names .firstName input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  margin-top: 30px;
+}
+.contact .Input .Names .lastName {
+  display: flex;
+  flex-direction: column;
+}
+.contact .Input .Names .lastName input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  margin-top: 30px;
+}
+.contact .Input .emailSubject {
+  display: flex;
+  gap: 30px;
+}
+.contact .Input .emailSubject .Email {
+  display: flex;
+  flex-direction: column;
+}
+.contact .Input .emailSubject .Email input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  margin-top: 30px;
+}
+.contact .Input .emailSubject .Subject {
+  display: flex;
+  flex-direction: column;
+}
+.contact .Input .emailSubject .Subject input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  margin-top: 30px;
+}
+.contact .Input .message {
+  display: flex;
+  flex-direction: column;
+}
+.contact .Input .message input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  margin-top: 80px;
+}
+.contact .Input button {
+  width: 200px;
+  height: 40px;
+}
+
+.ShopMyLook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+  background-color: #DFBFB1;
+}
+.ShopMyLook h1 {
+  font-family: var(--titleFont);
+  font-size: 80px;
+}
+
+.shopProduct {
+  height: 1000px;
+  background-color: #F3F1EA;
+}
+
+.TheBlog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+  background-color: #DFBFB1;
+}
+.TheBlog h1 {
+  font-family: var(--titleFont);
+  font-size: 80px;
+}
+
+.AllPost {
+  height: 1500px;
+  width: 100%;
+  background-color: #F3F1EA;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+}
+.filter ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.filter ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-family: var(--textFont);
+  transition: 0.2s;
+}
+.filter ul li a:hover {
+  color: #7C640E;
+}
+.filter ul li aactive {
+  color: #7C640E;
+}
+.filter .LogIn {
+  width: 150px;
+  height: 35px;
+  background-color: transparent;
+  color: #7C6D47;
+  border: 1px solid #7C6D47;
+  font-size: 13px;
+  font-family: var(--textFont);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.filter .LogIn:hover {
+  background-color: #DFBFB1;
+  color: white;
+}
+
+.posts2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 100px;
+}
+.posts2 .post2 {
+  background-color: white;
+  width: 340px;
+  height: 440px;
+  border: none;
+}
+.posts2 .post2 img {
+  width: 100%;
+  height: 230px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.posts2 .post2 .cardBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.posts2 .post2 .cardBottom .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 25px 15px;
+  font-size: 12px;
+}
+.posts2 .post2 .cardBottom .info a {
+  margin-top: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: var(--titleFont);
+}
+.posts2 .post2 .cardBottom .info a:hover {
+  color: #7C640E;
+}
+.posts2 .post2 .line {
+  border-bottom: 1px solid #9f9f9f;
+  width: 310px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.posts2 .post2 .viewer {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.AboutBella {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+  background-color: #DFBFB1;
+}
+.AboutBella h1 {
+  font-family: var(--titleFont);
+  font-size: 80px;
+}
+
+.AboutFull {
+  display: flex;
+  height: 600px;
+  width: 100%;
+  background-color: #F3F1EA;
+}
+.AboutFull .portrait {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  height: 522px;
+  width: 600px;
+}
+.AboutFull .portrait h1 {
+  font-family: var(--titleFont);
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+.AboutFull .portrait img {
+  height: 315px;
+  width: 317px;
+}
+.AboutFull .mountainPic {
+  margin-top: 25px;
+  background-image: url(./photo/mount.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 522px;
+  width: 610px;
+}
+
+.textAbout {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  align-items: center;
+  height: 400px;
+}
+.textAbout .paragraphLong {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 500px;
+}
+.textAbout .paragraphLong p {
+  padding: 20px;
+  font-family: var(--textFont);
+  font-size: 15px;
+}
+.textAbout .BlogPic img {
+  height: 300px;
+  padding-left: 30px;
+}
+
+@media screen and (max-width: 930px) {
+  .rightside ul {
+    display: none !important;
+  }
+  .rightside .icons {
+    display: none !important;
+  }
+  nav .fa-bars {
+    visibility: visible !important;
+    z-index: 3;
+  }
+  .contact {
+    height: 730px;
+    width: 100%;
+    display: flex;
+    gap: 100px;
+  }
+  .AllPost {
+    height: 2000px;
+  }
+  .About {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 365px;
+    width: 100%;
+    background-color: #F3F1EA;
+  }
+  .About .portrait {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: absolute;
+    left: -80px;
+    top: 5px;
+    height: 522px;
+    width: 600px;
+  }
+  .About .portrait h1 {
+    font-family: var(--titleFont);
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .About .portrait img {
+    height: 300px;
+    margin-bottom: 0px;
+  }
+  .About .mountain {
+    height: 400px;
+    width: 500px;
+    position: absolute;
+    top: 5px;
+  }
+  .followMe {
+    height: 1000px;
+    width: 100%;
+  }
+  .followMe .pictures {
+    height: 430px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 130px);
+    grid-auto-rows: 130px;
+    gap: 30px;
+    justify-content: center;
+  }
+}/*# sourceMappingURL=style.css.map */
